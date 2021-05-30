@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD INICIO-->
+<%- include('../partials/head.ejs') %>
+<!-- HEAD FIN-->
+<body>
+<!-- HEADER INICIO-->
+<%- include('../partials/header.ejs') %>
+<!-- HEADER FIN-->
+<!-- SIDEBAR INICIO-->
+<%- include('../partials/sidebar.ejs') %>
+<!-- SIDEBAR FIN-->
+<!--------------------------------------->
+<!-- CONTENIDO PRINCIPAL INICIO-->
+<section>
+    <h1>PAGINA DE LISTADO DE USUARIOS</h1>
+    <% if(users){ %>
+        <h1><%= users.nombre %></h1>
+    <% }else{ %>
+        <h2>NO HAY NADA PARA MOSTRAR</h2>
+    <% } %>
+</section>
+<!-- CONTENIDO PRINCIPAL FIN-->
+<!--------------------------------------->
+<!-- FOOTER INICIO-->
+<%- include('../partials/footer.ejs') %>
+<!-- FOOTER FIN-->
+</body>
+</html>

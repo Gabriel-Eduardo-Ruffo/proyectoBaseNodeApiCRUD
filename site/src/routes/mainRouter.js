@@ -1,4 +1,3 @@
-//darle color a los console log de consola
 const chalk = require("chalk");
 
 const express = require("express");

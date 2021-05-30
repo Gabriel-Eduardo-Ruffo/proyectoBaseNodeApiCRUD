@@ -7,7 +7,7 @@ const app = express();
 
 //path estatico PUBLIC
 const path = require("path");
-const publicPath = path.resolve(__dirname, "..public");
+const publicPath = path.resolve(__dirname, "../public");
 app.use(express.static(publicPath));
 
 //uso de cors para que pueda llamarse a las apis de otras direcciones
@@ -52,5 +52,18 @@ app.listen(process.env.PORT || port, () => {
 });
 
 /*-------------------DIRECCION PRINCIPAL PAGINAS-----------*/
+
+//ruta main
 const mainRouter = require(path.resolve(__dirname, "./routes/mainRouter"));
 app.use("/", mainRouter);
+
+//ruta users
+const usersRouter = require(path.resolve(__dirname, "./routes/usersRouter"));
+app.use("/users", usersRouter);
+
+//ruta products
+const productsRouter = require(path.resolve(__dirname, "./routes/productsRouter"));
+app.use("/products", productsRouter);
+
+const error404 = require('./middlewares/notFoundMiddleware');
+app.use(error404);
